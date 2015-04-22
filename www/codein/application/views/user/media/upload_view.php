@@ -4,17 +4,17 @@
 	<meta charset="utf-8">
 	<title>Медиафайлы</title>
 	
-<link rel="stylesheet" href="<?php echo base_url();?>css/bootstrap.min.css">
+<link rel="stylesheet" href="<?php echo base_url();?>css-back/bootstrap.min.css">
 <!-- Generic page styles -->
-<link rel="stylesheet" href="<?php echo base_url();?>css/style.css">
+<link rel="stylesheet" href="<?php echo base_url();?>css-back/style.css">
 <!-- blueimp Gallery styles -->
 <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
 <!-- CSS to style the file input field as button and adjust the Bootstrap progress bars -->
-<link rel="stylesheet" href="<?php echo base_url();?>css/jquery.fileupload.css">
-<link rel="stylesheet" href="<?php echo base_url();?>css/jquery.fileupload-ui.css">
+<link rel="stylesheet" href="<?php echo base_url();?>css-back/jquery.fileupload.css">
+<link rel="stylesheet" href="<?php echo base_url();?>css-back/jquery.fileupload-ui.css">
 <!-- CSS adjustments for browsers with JavaScript disabled -->
-<noscript><link rel="stylesheet" href="<?php echo base_url();?>css/jquery.fileupload-noscript.css"></noscript>
-<noscript><link rel="stylesheet" href="<?php echo base_url();?>css/jquery.fileupload-ui-noscript.css"></noscript>
+<noscript><link rel="stylesheet" href="<?php echo base_url();?>css-back/jquery.fileupload-noscript.css"></noscript>
+<noscript><link rel="stylesheet" href="<?php echo base_url();?>css-back/jquery.fileupload-ui-noscript.css"></noscript>
 </head>
 <body>
 

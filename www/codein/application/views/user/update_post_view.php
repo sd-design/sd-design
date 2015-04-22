@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<title>Редактирование записи</title>
-<link rel="stylesheet" href="<?php echo base_url();?>css/bootstrap.min.css">
+<link rel="stylesheet" href="<?php echo base_url();?>css-back/bootstrap.min.css">
 
 <!-- Optional theme -->
-<link rel="stylesheet" href="<?php echo base_url();?>css/bootstrap-theme.min.css">
-<link href='<?php echo base_url();?>css/style.css' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="<?php echo base_url();?>css-back/bootstrap-theme.min.css">
+<link href='<?php echo base_url();?>css-back/style.css' rel='stylesheet' type='text/css'>
 <script src="<?php echo base_url();?>js/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="<?php echo base_url();?>js/bootstrap.min.js"></script>
@@ -15,7 +15,7 @@
 <body>
 
 <div class="container theme-showcase">
-	<h1>Создание записи</h1>
+	<h1>Изменение записи</h1>
 
 <div class="col-sm-4">
 

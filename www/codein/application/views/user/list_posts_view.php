@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<title>Список записей</title>
-<link rel="stylesheet" href="<?php echo base_url();?>css/bootstrap.min.css">
+<link rel="stylesheet" href="<?php echo base_url();?>css-back/bootstrap.min.css">
 
 <!-- Optional theme -->
-<link rel="stylesheet" href="<?php echo base_url();?>css/bootstrap-theme.min.css">
-<link href='<?php echo base_url();?>css/style.css' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="<?php echo base_url();?>css-back/bootstrap-theme.min.css">
+<link href='<?php echo base_url();?>css-back/style.css' rel='stylesheet' type='text/css'>
 <script src="<?php echo base_url();?>js/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="<?php echo base_url();?>js/bootstrap.min.js"></script>
@@ -20,7 +20,7 @@
 <div class="row">
 
 <h1>Список записей</h1>
-<div class="col-md-8">
+<div class="col-md-10">
 	<div class="panel panel-default">
 				<div class="panel-heading">
 
