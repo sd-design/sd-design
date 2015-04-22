@@ -210,9 +210,9 @@ $post_time = date('Y-m-d')." ".date("H:i:s");
 
 
 			
-$sql = "INSERT INTO sd_post (post_name, post_url, post_anons, post_text, post_time, post_autor) VALUES(".$this->db->escape($post_name).",".$this->db->escape($post_url).",".$this->db->escape($post_anons).",".$this->db->escape($post_text).",".$this->db->escape($post_time).",".$this->db->escape($post_autor).")";	
+$sql = "INSERT INTO sd_post (category_id, post_name, post_url, post_anons, post_text, post_time, post_autor) VALUES(".$this->db->escape($сategory_id).",".$this->db->escape($post_name).",".$this->db->escape($post_url).",".$this->db->escape($post_anons).",".$this->db->escape($post_text).",".$this->db->escape($post_time).",".$this->db->escape($post_autor).")";	
 $this->db->query($sql);	
-$data['post_name'] =$post_name;
+$data['post_name'] = $post_name;
 	$this->load->view('user/add_post_view', $data);			
 				}
 		
