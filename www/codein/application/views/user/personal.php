@@ -29,18 +29,18 @@
 				<div class="col-md-4">
 <table class="table">
 <tr>
-<td>Имя:</td><td> <?php echo $firstname; ?></td></tr>
+<td>Имя:</td><td> <b><?php echo $firstname; ?></b></td></tr>
 <tr>
-<td>Фамилия:</td><td> <?php echo $lastname; ?></td></tr>
+<td>Фамилия:</td><td> <b><?php echo $lastname; ?></b></td></tr>
 <tr>
-<td>email:</td><td> <?php echo $email; ?></td></tr>
+<td>email:</td><td> <b><?php echo $email; ?></b></td></tr>
 <tr>
-<td>дата регистрации:</td><td> <?php echo $reg_date; ?></td></tr>
+<td>дата регистрации:</td><td> <b><?php echo $reg_date; ?></b></td></tr>
 <tr>
 <td>Роль:</td><td> <?php echo $user_role; ?></td></tr>
 <tr>
 <td>
-<a href="<?php echo base_url();?>user/panel">главная панель</a></td><td></td></tr>
+<a href="<?php echo base_url();?>user/panel" class="btn btn-info">главная панель</a></td><td></td></tr>
 </table>
 </div>
 

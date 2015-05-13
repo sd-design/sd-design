@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 	<meta charset="utf-8">
-	<title>Редактирование записи</title>
+	<title><?php echo $alert_title;?></title>
 <link rel="stylesheet" href="<?php echo base_url();?>css-back/bootstrap.min.css">
 
 <!-- Optional theme -->
@@ -15,18 +15,16 @@
 <body>
 
 <div class="container theme-showcase">
-	<h1>Изменение записи</h1>
-
-<div class="col-sm-4">
-
+<div class="col-sm-10">
+	<h1><?php echo $alert_title;?></h1>
 
 
-<h5>Запись <b><?php echo $post_name;?></b> перезаписана</h5>
-
-	<br/><a href="<?php echo base_url();?>user/edit/posts" class="btn btn-warning" type="button">к списку записей</a> <a href="<?php echo base_url();?>user/panel" class="btn btn-info">Панель управления</a>
+<div class="jumbotron">
+    <?php echo $alert;?>
 	</div>
-
-	
+<br/><a href="<?php echo base_url();?>user/panel" class="btn btn-info">панель управления</a>
+	</div>
+    
 </div>
 
 </body>

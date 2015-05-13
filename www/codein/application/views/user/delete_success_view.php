@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 	<meta charset="utf-8">
-	<title>Редактирование записи</title>
+	<title>Удаление</title>
 <link rel="stylesheet" href="<?php echo base_url();?>css-back/bootstrap.min.css">
 
 <!-- Optional theme -->
@@ -15,15 +15,18 @@
 <body>
 
 <div class="container theme-showcase">
-	<h1>Изменение записи</h1>
+	<h1>Удаление прошло успешно</h1>
 
 <div class="col-sm-4">
 
 
 
-<h5>Запись <b><?php echo $post_name;?></b> перезаписана</h5>
+<h4>Уже не вернуть то, что вы удалили</h4>
 
-	<br/><a href="<?php echo base_url();?>user/edit/posts" class="btn btn-warning" type="button">к списку записей</a> <a href="<?php echo base_url();?>user/panel" class="btn btn-info">Панель управления</a>
+    <h5>А удалили вы: <b><?php echo $delete_name;?></b></h5>
+
+
+	<br/><a href="<?php echo base_url();?>user/panel" class="btn btn-info">панель управления</a>
 	</div>
 
 	

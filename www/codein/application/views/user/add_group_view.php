@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 	<meta charset="utf-8">
-	<title>Редактирование записи</title>
+	<title>Создание раздела</title>
 <link rel="stylesheet" href="<?php echo base_url();?>css-back/bootstrap.min.css">
 
 <!-- Optional theme -->
@@ -15,15 +15,15 @@
 <body>
 
 <div class="container theme-showcase">
-	<h1>Изменение записи</h1>
+	<h1>Создание группы элементов</h1>
 
 <div class="col-sm-4">
 
 
 
-<h5>Запись <b><?php echo $post_name;?></b> перезаписана</h5>
-
-	<br/><a href="<?php echo base_url();?>user/edit/posts" class="btn btn-warning" type="button">к списку записей</a> <a href="<?php echo base_url();?>user/panel" class="btn btn-info">Панель управления</a>
+<h4>Группа <b><?php echo $group_title;?></b> создана</h4>
+<h5>Описание <b><?php echo $group_descript;?></b></h5>
+	<br/><a href="<?php echo base_url();?>user/panel" class="btn btn-info">панель управления</a>
 	</div>
 
 	

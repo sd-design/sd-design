@@ -17,7 +17,9 @@
 
 <div class="container theme-showcase">
 	<h1>Панель управления</h1>
-<div class="well">sd-engine v1.0 <div class="col-md-offset-11"><small><?php echo $panel; ?></small></div></div>
+<div class="well">sd-engine CMS v1.0.1 <br/><small><?php echo $panel; ?></small><div class="col-md-offset-11">
+    <a href="<?php echo base_url();?>user/logout" class="btn btn-lg btn-danger">выйти</a></div>
+</div>
 <div class="row">
 										<div class="col-sm-4">
 
@@ -30,8 +32,6 @@
 <a href="<?php echo base_url();?>user/create">создать</a> 
 <br/>
 <a href="<?php echo base_url();?>user/edit">редактировать</a>
-<br/>
-<a href="<?php echo base_url();?>user/delete">удалить</a>
 		</div>
 </div>
 	
@@ -61,7 +61,7 @@
 		</div>
 </div>
 
-<div class="panel panel-primary">
+<div class="panel panel-danger">
 			<div class="panel-heading">
 <h3 class="panel-title">[ Персональный раздел ]</h3>
 			</div>
@@ -73,7 +73,47 @@
 </div>
 																</div>
 																
+														
 	<div class="col-sm-4">
+<div class="panel panel-info">
+		<div class="panel-heading">
+<h3 class="panel-title">[ Элементы ]</h3>
+		</div>
+		<div class="panel-body">
+<a href="<?php echo base_url();?>user/create/item">создать элемент</a> 
+<br/>
+<a href="<?php echo base_url();?>user/edit/items">редактировать элемент</a>
+			</div>
+</div>	
+
+<div class="panel panel-info">
+		<div class="panel-heading">
+<h3 class="panel-title">[ Группы элементов ]</h3>
+		</div>
+		<div class="panel-body">
+<a href="<?php echo base_url();?>user/create/group">создать группу</a> 
+<br/>
+<a href="<?php echo base_url();?>user/edit/groups">редактировать группу</a>
+			</div>
+</div>
+
+<div class="panel panel-info">
+		<div class="panel-heading">
+<h3 class="panel-title">[ Структура страниц ]</h3>
+		</div>
+		<div class="panel-body">
+<a href="<?php echo base_url();?>user/create/structure">создать новую структуру</a> 
+<br/>
+<a href="<?php echo base_url();?>user/edit/structure">редактировать структуру</a>
+			</div>
+</div>
+        
+        
+	</div>
+    
+    
+    
+    	<div class="col-sm-4">
 	
 <div class="panel panel-success">
 		<div class="panel-heading">
@@ -124,17 +164,14 @@
 		<div class="panel-body">
 <a href="<?php echo base_url();?>user/options/change">опции сайта</a> 
 <br/>
-<a href="<?php echo base_url();?>user/options/mail">настройки обратной связи</a>
+<a href="<?php echo base_url();?>user/options/feedback">настройки обратной связи</a>
 <br/>
 		</div>
 </div>
 
 
 																</div>
-																
-	<div class="col-sm-4">
-
-	</div>
+		
 
 	</div>
 				</div>

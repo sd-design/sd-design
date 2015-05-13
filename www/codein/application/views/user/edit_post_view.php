@@ -51,14 +51,19 @@
 <div class="row">
 <div class="col-sm-4">
 <h4>Автор * <small>Не выбирайте, если не хотите изменить автора</small></h4>
-<select class="form-control" name="category_id">
-<option value="<?php echo $item->category_id;?>"> -- без изменений</option>
+<select class="form-control" name="autor_id">
+<option value="<?php echo $item->autor_id;?>" class="active"> -- без изменений</option>
 <?php foreach ($list_users->result()  as $item3):?>
 <option value="<?php echo $item3->ID;?>"><?php echo $item3->firstname;?> <?php echo $item3->lastname;?></option>
 <?php endforeach;?>
 </select>
 </div>
 </div>
+<div class="row">
+<div class="col-sm-5">
+<h5>Картинка</h5>
+<input type="text" name="post_image" value="<?php echo $item->post_image;?>" size="60" class="form-control"/>
+</div></div>
 <div class="row">
 <div class="col-sm-10">
 <h5>Анонс записи</h5>

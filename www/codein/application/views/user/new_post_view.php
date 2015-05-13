@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 	<meta charset="utf-8">
-	<title>Создание раздела</title>
+	<title>Создание новой записи</title>
 <link rel="stylesheet" href="<?php echo base_url();?>css-back/bootstrap.min.css">
 
 <!-- Optional theme -->
@@ -43,6 +43,11 @@
 </select>
 </div>
 </div>
+<div class="row">
+<div class="col-sm-5">
+<h5>Картинка</h5>
+<input type="text" name="post_image" size="60" class="form-control"/>
+</div></div>
 <div class="row">
 <div class="col-sm-10">
 <h5>Анонс записи</h5>
