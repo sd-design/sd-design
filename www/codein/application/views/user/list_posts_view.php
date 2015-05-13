@@ -20,7 +20,7 @@
 <div class="row">
 
 <h1>Список записей</h1>
-<div class="col-md-8">
+<div class="col-md-10">
 	<div class="panel panel-default">
 				<div class="panel-heading">
 

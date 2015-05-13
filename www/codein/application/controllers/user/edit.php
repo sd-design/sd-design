@@ -80,8 +80,11 @@ EDIT PART
 				if ($check == true){
 		$data['alert'] = "";
 		$this->load->database();
-		$data['edit_posts']  = $this->db->query("SELECT * FROM sd_post WHERE id=".$id." LIMIT 1;");	
+		$data['edit_posts']  = $this->db->query("SELECT * FROM sd_post WHERE id=".$id." LIMIT 1;");
+		$row = $data['edit_posts']->row();	
+		$data['still_category']  = $this->db->query("SELECT * FROM sd_category WHERE id=".$row->category_id." LIMIT 1;");
 		$data['list_category']  = $this->db->get("sd_category");			
+		$data['list_users']  = $this->db->get("users");		
 				
 		$this->load->view('user/edit_post_view', $data);
 		}

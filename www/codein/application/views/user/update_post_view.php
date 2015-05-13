@@ -15,7 +15,7 @@
 <body>
 
 <div class="container theme-showcase">
-	<h1>Создание записи</h1>
+	<h1>Изменение записи</h1>
 
 <div class="col-sm-4">
 

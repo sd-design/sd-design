@@ -52,7 +52,9 @@ foreach ($query->result_array() as $row)
     
 
 }
-$data['list_posts']  = $this->db->query("SELECT * FROM sd_post WHERE category_id=".$category_id.";");	
+
+// изменения сортировки
+$data['list_posts']  = $this->db->query("SELECT * FROM sd_post WHERE category_id=".$category_id." ORDER BY post_time DESC;");	
 
 		$this->load->view('template/header_view',$data);
 		$this->load->view('template/category_view',$data);

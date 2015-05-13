@@ -119,7 +119,36 @@ UPDATE POST
 	$check = $this->Singin->check_login_admin($session_id_check, $key_check);
 	
 				if ($check == true){
-				
+		$post_id = $_POST['post_id'];
+		$сategory_id = $_POST['category_id'];
+		$post_name = $_POST['post_name'];
+		$post_url = $_POST['post_url'];
+		$post_anons = $_POST['post_anons'];
+		$post_text = $_POST['post_text'];
+
+		
+		$reserved = array("user","login","panel","read","create","edit", "logout","registration");
+	foreach($reserved as $key){
+	if ($post_url === $key)
+	{
+	$data['alert']= "<div class='alert alert-danger'>Данный URL (<b>".$post_url."</b>) зарезервирован системой</div>";
+	$this->load->view('user/new_post_view', $data);
+	exit;
+	}
+	}
+	
+	$this->load->database();
+	$query = $this->db->query("SELECT * FROM sd_post WHERE post_url = ".$this->db->escape($post_url));
+		if ($query->num_rows() == TRUE)
+	
+	{
+	$data['alert']= "<div class='alert alert-danger'>Такой URL(<b>".$post_url."</b>) зарезервирован</div>";
+	$this->load->view('user/new_post_view', $data);
+	exit;
+	}
+$sql = "UPDATE sd_post SET category_id=".$this->db->escape($сategory_id).", post_name=".$this->db->escape($post_name).", post_url=".$this->db->escape($post_url).", post_anons=".$this->db->escape($post_anons).", post_text=".$this->db->escape($post_text).", post_time=".$this->db->escape($post_time).", post_autor=".$this->db->escape($post_autor)."WHERE id=".$this->db->escape($post_id);	
+$this->db->query($sql);	
+$data['post_name'] = $post_name;	
 		
 		$this->load->view('user/update_post_view', $data);
 		
