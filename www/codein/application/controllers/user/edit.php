@@ -158,7 +158,95 @@ EDIT PART
 							
 							}
 
+
+    
+//Список элементов
+public function items()
+	{
+
+	$this->load->model('Singin');
+	$session_id_check = $this->session->userdata('session_id');
+	$key_check= $this->session->userdata('key');
+	$check = $this->Singin->check_login_admin($session_id_check, $key_check);
+	
+		if ($check == true){
+		$this->load->database();
+		$data['list_items']  = $this->db->get("sd_items");		
+				
+				
+		$this->load->view('user/list_items_view', $data);
+		}
+		else{redirect('user/panel');}
+
+	}
+    
+//Список групп элементов
+	public function groups()
+	{
+
+	$this->load->model('Singin');
+	$session_id_check = $this->session->userdata('session_id');
+	$key_check= $this->session->userdata('key');
+	$check = $this->Singin->check_login_admin($session_id_check, $key_check);
+	
+		if ($check == true){
+		$this->load->database();
+		$data['list_groups']  = $this->db->get("sd_items_group");		
+				
+				
+		$this->load->view('user/list_groups_view', $data);
+		}
+		else{redirect('user/panel');}
+
+	}
+ 
+    
+// Редактирование группы
+public function group($id)
+		{
+    $this->load->model('Singin');
+	$session_id_check = $this->session->userdata('session_id');
+	$key_check= $this->session->userdata('key');
+	$check = $this->Singin->check_login_admin($session_id_check, $key_check);
+	
+				if ($check == true){
+		$data['alert'] = "";
+		$this->load->database();
+		$data['edit_group']  = $this->db->query("SELECT * FROM sd_items_group WHERE ID=".$id." LIMIT 1;");	
+					
+				
+		$this->load->view('user/edit_group_view', $data);
+		}
+		else{redirect('user/panel');}
 							
+							}
+    
+    
+//Удаление группы действие 1
+public function ready_delete_group($id)
+	{
+
+	$this->load->model('Singin');
+	$session_id_check = $this->session->userdata('session_id');
+	$key_check= $this->session->userdata('key');
+	$check = $this->Singin->check_login_admin($session_id_check, $key_check);
+	
+		if ($check == true){
+		$this->load->database();
+		$query = $this->db->query("SELECT * FROM sd_items_group WHERE ID=".$id." LIMIT 1;");	
+		$row = $query->row();
+            
+		$data['what_delete'] = $row->group_title;
+        $data['delete_descript'] = $row->group_descript;
+        $data['delete_id'] = "group/".$row->ID;
+		$this->load->view('user/ready_delete_view', $data);
+		}
+		else{redirect('user/panel');}
+
+	}
+    
+	
+    
 //END CLASS
 	
 }

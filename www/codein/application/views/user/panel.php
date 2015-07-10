@@ -32,6 +32,8 @@
 <a href="<?php echo base_url();?>user/create">создать</a> 
 <br/>
 <a href="<?php echo base_url();?>user/edit">редактировать</a>
+<br/>
+<a href="<?php echo base_url();?>user/delete">удалить</a>
 		</div>
 </div>
 	

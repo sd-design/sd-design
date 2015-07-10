@@ -170,16 +170,18 @@ public function new_post()
 		
 		if ($this->form_validation->run() == FALSE)
 		{
+            $data['category_arr'] = $this->db->get("sd_category");	
 		$this->load->view('user/new_post_view', $data);
 		}
 		
 		elseif ($this->form_validation->run() == TRUE){
-		$сategory_id = $_POST['category_id'];
+		$category_id = $_POST['category_id'];
 		$post_name = $_POST['post_name'];
 		$post_url = $_POST['post_url'];
 		$post_anons = $_POST['post_anons'];
 		$post_text = $_POST['post_text'];
-
+        $post_image = $_POST['post_image'];
+        $post_time = date('Y-m-d')." ".date("H:i:s");
 		
 		$reserved = array("user","login","panel","read","create","edit", "logout","registration");
 	foreach($reserved as $key){
@@ -205,12 +207,10 @@ $session_login = $this->session->userdata('login');
 $query = $this->db->query("SELECT * FROM users WHERE login='$session_login' LIMIT 1");
 $row = $query->row_array();
 $post_autor = $row['firstname']." ".$row['lastname'];
-
-$post_time = date('Y-m-d')." ".date("H:i:s");
-
+$autor_id = $row['ID'];
 
 			
-$sql = "INSERT INTO sd_post (category_id, post_name, post_url, post_anons, post_text, post_time, post_autor) VALUES(".$this->db->escape($сategory_id).",".$this->db->escape($post_name).",".$this->db->escape($post_url).",".$this->db->escape($post_anons).",".$this->db->escape($post_text).",".$this->db->escape($post_time).",".$this->db->escape($post_autor).")";	
+$sql = "INSERT INTO sd_post (category_id, post_name, post_url, post_anons, post_text, post_time, post_autor, autor_id, post_image) VALUES(".$this->db->escape($category_id).",".$this->db->escape($post_name).",".$this->db->escape($post_url).",".$this->db->escape($post_anons).",".$this->db->escape($post_text).",".$this->db->escape($post_time).",".$this->db->escape($post_autor).",".$this->db->escape($autor_id).",".$this->db->escape($post_image).")";	
 $this->db->query($sql);	
 $data['post_name'] = $post_name;
 	$this->load->view('user/add_post_view', $data);			
@@ -314,7 +314,162 @@ $data['countdown_title'] = $countdown_title;
 		ob_end_flush(); 
 	}
 	
+// CREATE ITEM	
+	public function item()
+	{
 	
+	
+			$data['alert']="";
+		$this->load->model('Singin');
+	$session_id_check = $this->session->userdata('session_id');
+	$key_check= $this->session->userdata('key');
+	$check = $this->Singin->check_login_admin($session_id_check, $key_check);
+	if ($check == true){
+	$this->load->database();
+		$data['items_type_arr'] = $this->db->get("sd_items_type");		
+        $data['items_group_arr'] = $this->db->get("sd_items_group");	
+		
+		$this->load->view('user/new_item_view', $data);
+		}
+		else{redirect('user/panel');}
+	}    
+
+// CREATE NEW ITEM and ADD TO DB
+    public function new_item()
+	{
+	
+	ob_start();
+	$category_descript ="";
+		$data['alert']= "";
+	
+		$this->load->model('Singin');
+	$session_id_check = $this->session->userdata('session_id');
+	$key_check= $this->session->userdata('key');
+	$check = $this->Singin->check_login_admin($session_id_check, $key_check);
+	
+				if ($check == true){
+		 	$this->form_validation->set_rules('item_name', 'Название', 'required');
+			$this->form_validation->set_rules('item_url', 'URL', 'required');
+			$this->form_validation->set_rules('item_text', 'Текст элемента', 'required|min_length[5]');
+
+		
+		if ($this->form_validation->run() == FALSE)
+		{
+            	$data['items_type_arr'] = $this->db->get("sd_items_type");		
+        $data['items_group_arr'] = $this->db->get("sd_items_group");	
+		
+		$this->load->view('user/new_item_view', $data);
+		}
+		
+		elseif ($this->form_validation->run() == TRUE){
+		
+		$item_name = $_POST['item_name'];
+		$item_url = $_POST['item_url'];
+		$item_type = $_POST['item_type'];
+        $item_group = $_POST['item_group'];
+		$item_text = $_POST['item_text'];
+        $item_time = date('Y-m-d')." ".date("H:i:s");
+
+		
+		$reserved = array("user","login","panel","read","create","edit", "logout","registration");
+	foreach($reserved as $key){
+	if ($item_url === $key)
+	{
+	$data['alert']= "<div class='alert alert-danger'>Данный URL (<b>".$item_url."</b>) зарезервирован системой</div>";
+	$this->load->view('user/new_item_view', $data);
+	exit;
+	}
+	}
+	
+	$this->load->database();
+	$query = $this->db->query("SELECT * FROM sd_items WHERE item_url = ".$this->db->escape($item_url));
+		if ($query->num_rows() == TRUE)
+	
+	{
+	$data['alert']= "<div class='alert alert-danger'>Такой URL(<b>".$item_url."</b>) зарезервирован</div>";
+	$this->load->view('user/new_item_view', $data);
+	exit;
+	}
+	
+
+			
+$sql = "INSERT INTO sd_items (item_name, item_url, item_type, item_group, item_text, item_time) VALUES(".$this->db->escape($item_name).",".$this->db->escape($item_url).",".$this->db->escape($item_type).",".$this->db->escape($item_group).",".$this->db->escape($item_text).",".$this->db->escape($item_time).")";	
+$this->db->query($sql);	
+$data['item_name'] = $item_name;
+	$this->load->view('user/add_item_view', $data);			
+				}
+		
+
+	}
+	else{redirect('user/panel');}
+ 
+	}
+	
+    
+// CREATE ITEM_GROUP	
+	public function group()
+	{
+				$data['alert']="";
+		$this->load->model('Singin');
+	$session_id_check = $this->session->userdata('session_id');
+	$key_check= $this->session->userdata('key');
+	$check = $this->Singin->check_login_admin($session_id_check, $key_check);
+	if ($check == true){
+	$this->load->database();
+		$data['items_type_arr'] = $this->db->get("sd_items_type");		
+        $data['items_group_arr'] = $this->db->get("sd_items_group");	
+		
+		$this->load->view('user/new_group_view', $data);
+		}
+		else{redirect('user/panel');}
+	}    
+
+// CREATE NEW GROUP of ITEM and ADD TO DB
+    public function new_group()
+	{
+	
+	ob_start();
+	$category_descript ="";
+		$data['alert']= "";
+	
+		$this->load->model('Singin');
+	$session_id_check = $this->session->userdata('session_id');
+	$key_check= $this->session->userdata('key');
+	$check = $this->Singin->check_login_admin($session_id_check, $key_check);
+	
+				if ($check == true){
+		 	$this->form_validation->set_rules('group_title', 'Название группы', 'required');
+			$this->form_validation->set_rules('group_name', 'URL', 'required');
+			$this->form_validation->set_rules('group_descript', 'Описание группы', 'required|min_length[5]');
+
+		
+		if ($this->form_validation->run() == FALSE)
+		{
+    		$this->load->view('user/new_group_view', $data);
+		}
+		
+		elseif ($this->form_validation->run() == TRUE){
+		
+        $group_title = $_POST['group_title'];
+		$group_name = $_POST['group_name'];
+		$group_descript = $_POST['group_descript'];
+ 			
+$sql = "INSERT INTO sd_items_group (group_title, group_name, group_descript) VALUES(".$this->db->escape($group_title).",".$this->db->escape($group_name).",".$this->db->escape($group_descript).")";	
+$this->db->query($sql);	
+$data['group_title'] = $group_title;
+$data['group_descript'] = $group_descript;            
+	$this->load->view('user/add_group_view', $data);			
+				}
+		
+
+	}
+	else{redirect('user/panel');}
+ 
+	}
+	
+    
+
+    
 	//END CLASS
 	
 	

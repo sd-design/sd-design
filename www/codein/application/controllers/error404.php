@@ -30,7 +30,7 @@ public function __construct()
 	$data['message'] = "Обычно это означает, что такой страницы нет или ее куда-то задевали...";
 	$this->load->view('template/header_view',$data);
 	$this->load->view('template/404_view',$data);
-	$this->load->view('template/footer_view');
+	
 	}
 	
 
