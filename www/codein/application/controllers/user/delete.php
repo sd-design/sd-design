@@ -19,7 +19,7 @@ DELETE PART
 
 	
 	}
-//не редактированная функция!!!	
+//Удаление записи
 public function post($id)
 		{
 								$this->load->model('Singin');
@@ -29,11 +29,11 @@ public function post($id)
 	
 	if ($check == true){
 		$this->load->database();
-		$query = $this->db->query("SELECT * FROM sd_post WHERE ID=".$id." LIMIT 1;");	
+		$query = $this->db->query("SELECT * FROM sd_post WHERE id=".$id." LIMIT 1;");	
         $row = $query->row_array(); 
-        $data['delete_name'] = $row['group_name'];
+        $data['delete_name'] = $row['post_name'];
             
-        $this->db->query("DELETE FROM sd_post WHERE ID=".$id." LIMIT 1;");		
+        $this->db->query("DELETE FROM sd_post WHERE id=".$id." LIMIT 1;");		
 				
 		$this->load->view('user/delete_success_view', $data);
 		}

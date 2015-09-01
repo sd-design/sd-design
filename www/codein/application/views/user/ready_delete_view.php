@@ -23,7 +23,7 @@
 <div class="alert alert-warning">
 
 <h3><small>Описание:</small> <?php echo $delete_descript;?> </h3>
-<h5>если вы хотите совершить это действие нажмите <a href="<?php echo base_url();?>user/delete/<?php echo $delete_id;?>" class="btn btn-danger">удалить</a></h5>
+<h5>если вы хотите совершить это действие нажмите <a href="<?php echo base_url();?><?php echo $delete_action;?><?php echo $delete_id;?>" class="btn btn-danger">удалить</a></h5>
 	</div>
     	<br/><a href="<?php echo base_url();?>user/panel" class="btn btn-info">панель управления</a>
     </div>

@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 	<meta charset="utf-8">
-	<title>Panel</title>
+	<title>Panel SD-ENGINE v1.0.5</title>
 		<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="<?php echo base_url();?>css-back/bootstrap.min.css">
 
@@ -17,7 +17,8 @@
 
 <div class="container theme-showcase">
 	<h1>Панель управления</h1>
-<div class="well">sd-engine CMS v1.0.1 <br/><small><?php echo $panel; ?></small><div class="col-md-offset-11">
+<div class="well">sd-engine CMS v1.0.5 <br/><small><?php echo $panel; ?></small><br/>
+    <a href="<?php echo base_url();?>" target="_blank" class="btn btn-warning">перейти на сайт</a><div class="col-md-offset-11">
     <a href="<?php echo base_url();?>user/logout" class="btn btn-lg btn-danger">выйти</a></div>
 </div>
 <div class="row">
@@ -32,8 +33,6 @@
 <a href="<?php echo base_url();?>user/create">создать</a> 
 <br/>
 <a href="<?php echo base_url();?>user/edit">редактировать</a>
-<br/>
-<a href="<?php echo base_url();?>user/delete">удалить</a>
 		</div>
 </div>
 	
@@ -110,7 +109,16 @@
 			</div>
 </div>
         
-        
+ <div class="panel panel-default">
+		<div class="panel-heading">
+<h3 class="panel-title">[ Яндекс-фото и Яндекс-метрика ]</h3>
+		</div>
+		<div class="panel-body">
+<a href="<?php echo base_url();?>user/yandex/foto">Яндекс-фото</a> 
+<br/>
+<a href="<?php echo base_url();?>user/yandex/metrika">Яндекс-метрика</a>
+			</div>
+</div>       
 	</div>
     
     

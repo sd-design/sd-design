@@ -245,7 +245,28 @@ public function ready_delete_group($id)
 
 	}
     
+//Удаление записи действие 1
+public function ready_delete_post($id)
+	{
+
+	$this->load->model('Singin');
+	$session_id_check = $this->session->userdata('session_id');
+	$key_check= $this->session->userdata('key');
+	$check = $this->Singin->check_login_admin($session_id_check, $key_check);
 	
+		if ($check == true){
+		$this->load->database();
+		$query = $this->db->query("SELECT * FROM sd_post WHERE id=".$id." LIMIT 1;");	
+		$row = $query->row();
+            
+		$data['what_delete'] = $row->post_name;
+        $data['delete_descript'] = $row->post_anons;
+        $data['delete_id'] = "post/".$row->id;
+		$this->load->view('user/ready_delete_view', $data);
+		}
+		else{redirect('user/panel');}
+
+	}
     
 //END CLASS
 	
