@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 	<meta charset="utf-8">
-	<title>Panel SD-ENGINE v1.0.5</title>
+	<title>Panel SD-ENGINE v1.0.6</title>
 		<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="<?php echo base_url();?>css-back/bootstrap.min.css">
 
@@ -17,7 +17,10 @@
 
 <div class="container theme-showcase">
 	<h1>Панель управления</h1>
-<div class="well">sd-engine CMS v1.0.5 <br/><small><?php echo $panel; ?></small><br/>
+<div class="well">
+    <div class="logotype">
+    <div class="well-logo"></div></div>
+    sd-engine CMS v1.0.6 <br/><small><?php echo $panel; ?></small><br/>
     <a href="<?php echo base_url();?>" target="_blank" class="btn btn-warning">перейти на сайт</a><div class="col-md-offset-11">
     <a href="<?php echo base_url();?>user/logout" class="btn btn-lg btn-danger">выйти</a></div>
 </div>

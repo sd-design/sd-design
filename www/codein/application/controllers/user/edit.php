@@ -81,7 +81,10 @@ EDIT PART
 		$data['alert'] = "";
 		$this->load->database();
 		$data['edit_posts']  = $this->db->query("SELECT * FROM sd_post WHERE id=".$id." LIMIT 1;");
-		$row = $data['edit_posts']->row();	
+		$row = $data['edit_posts']->row();
+        $date = $row->post_time;
+        $data['day'] = date_format(date_create($date), 'd.m.Y');
+        $data['time'] = date_format(date_create($date), 'H:i:s');
 		$data['still_category']  = $this->db->query("SELECT * FROM sd_category WHERE id=".$row->category_id." LIMIT 1;");
 		$data['list_category']  = $this->db->get("sd_category");			
 		$data['list_users']  = $this->db->get("users");		

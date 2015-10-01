@@ -1,10 +1,10 @@
 <?php
 
 $lang['db_invalid_connection_str'] = 'Unable to determine the database settings based on the connection string you submitted.';
-$lang['db_unable_to_connect'] = 'Невозможно подключиться к серверу БД с текущими настройками.';
+$lang['db_unable_to_connect'] = 'Невозможно подключиться к ДБ с текущими настройками.';
 $lang['db_unable_to_select'] = 'Unable to select the specified database: %s';
 $lang['db_unable_to_create'] = 'Unable to create the specified database: %s';
-$lang['db_invalid_query'] = 'Недопустимыйй запрос.';
+$lang['db_invalid_query'] = 'Неправильный запрос к БД.';
 $lang['db_must_set_table'] = 'You must set the database table to be used with your query.';
 $lang['db_must_use_set'] = 'You must use the "set" method to update an entry.';
 $lang['db_must_use_index'] = 'You must specify an index to match on for batch updates.';

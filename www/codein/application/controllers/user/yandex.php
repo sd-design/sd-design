@@ -181,7 +181,7 @@ $this->db->query($sql);
 							
 							}
 
-    //функция работы с Яндек-метрикой
+//функция работы с Яндек-метрикой
 public function metrika()
 		{
     ob_start();
@@ -252,10 +252,53 @@ $this->db->query($sql);
 ob_end_flush(); 				
 							}
 
-
+//функция подготовки удаления альбома
+public function ready_delete_albums($id)
+		{
+    $this->load->model('Singin');
+	$session_id_check = $this->session->userdata('session_id');
+	$key_check= $this->session->userdata('key');
+	$check = $this->Singin->check_login_admin($session_id_check, $key_check);
+	
+				if ($check == true){
+$this->load->database();
+$query  = $this->db->query("SELECT * FROM sd_yandex_foto WHERE ID=".$id." LIMIT 1;");	
+                    
+//Вынимаем данные из БД по альбому
+$row = $query->row(); 
+            
+                    $data['delete_descript'] = "Альбом будет удален из БД сайта";
+                    $data['what_delete'] = $row->yandex_name;
+                     $data['delete_action'] = "user/yandex/delete/";
+                    $data['delete_id'] = $row->ID;
+		          $this->load->view('user/ready_delete_view', $data);
+	
+		}
+		else{redirect('user/panel');}
+							
+							}
+    
+//функция удаления альбома
+public function delete($id)   
+{
+     $this->load->model('Singin');
+	$session_id_check = $this->session->userdata('session_id');
+	$key_check= $this->session->userdata('key');
+	$check = $this->Singin->check_login_admin($session_id_check, $key_check);
+	
+				if ($check == true){
+                    
+				$sql = "DELETE FROM sd_yandex_foto WHERE ID=$id";
+				$this->db->query($sql);	
+                     $data['alert_title'] = 'Удаление альбома';	
+    $data['alert'] = '<div class="alert alert-success">Альбом был удален</div>';	
+    $this->load->view('user/alert_view', $data);
+                    
+    }
+    else{redirect('user/panel');}
+}
+    
 //Функция Опции Яндекс-фото для альтернативного использования фоток из сервиса
-
-//функция редактирования альбома
 public function options()
 		{
     $this->load->model('Singin');

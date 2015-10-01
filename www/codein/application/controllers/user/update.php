@@ -119,6 +119,7 @@ UPDATE POST
 	$check = $this->Singin->check_login_admin($session_id_check, $key_check);
 	
 				if ($check == true){
+               
 		$post_id = $_POST['post_id'];
 		$category_id = $_POST['category_id'];
 		$post_name = $_POST['post_name'];
@@ -130,7 +131,9 @@ UPDATE POST
         $query = $this->db->query("SELECT * FROM users WHERE ID='$autor_id' LIMIT 1");
         $row = $query->row_array();
         $post_autor = $row['firstname']." ".$row['lastname'];
-        $post_time = date('Y-m-d')." ".date("H:i:s");
+        if (empty($_POST['post_day']) || empty($_POST['post_time'])){ $post_time = date('Y-m-d')." ".date("H:i:s"); }
+                    $day = date_format(date_create($_POST['post_day']), 'Y-m-d');
+        $post_time =  $day." ".$_POST['post_time'];  
 		
 		$reserved = array("user","login","panel","read","create","edit", "logout","registration");
 	foreach($reserved as $key){

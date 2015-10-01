@@ -23,7 +23,7 @@
 
 <h5>Логин</h5>
 <input type="text" name="login" value="" size="50" class="form-control"/>
-<input type="hidden" name="key-tmp" value="<? echo $key_gen;?>" size="50" />
+<input type="hidden" name="key-tmp" value="<?php echo $key_gen;?>" size="50" />
 <h5>Пароль</h5>
 <input type="password" name="password" value="" size="50" class="form-control"/>
 <br/>
