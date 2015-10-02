@@ -41,7 +41,7 @@
 </form><br/>
 	
 	<br/>
-		<div class="btn-group" role="group" aria-label="Small button group"><a href="<?php echo base_url();?>user/yandex/foto" class="btn btn-warning" type="button">Яндек-фото</a> <a href="<?php echo base_url();?>user/panel" class="btn btn-info" type="button">панель управления</a></div>
+		<div class="btn-group" role="group" aria-label="Small button group"><a href="<?php echo base_url();?>user/yandex/foto" class="btn btn-warning" type="button">Яндекс-фото</a> <a href="<?php echo base_url();?>user/panel" class="btn btn-info" type="button">панель управления</a></div>
 	</div>
 
 	</div>

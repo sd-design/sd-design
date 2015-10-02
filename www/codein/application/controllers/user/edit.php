@@ -94,6 +94,32 @@ EDIT PART
 		else{redirect('user/panel');}
 							
 							}
+    
+    // функция редактирования элемента
+    	public function item($id)
+		{
+								$this->load->model('Singin');
+	$session_id_check = $this->session->userdata('session_id');
+	$key_check= $this->session->userdata('key');
+	$check = $this->Singin->check_login_admin($session_id_check, $key_check);
+	
+				if ($check == true){
+		$data['alert'] = "";
+		$this->load->database();
+		$data['edit_posts']  = $this->db->query("SELECT * FROM sd_items WHERE id=".$id." LIMIT 1;");
+		$row = $data['edit_posts']->row();
+        $date = $row->item_time;
+        $data['day'] = date_format(date_create($date), 'd.m.Y');
+        $data['time'] = date_format(date_create($date), 'H:i:s');
+                $data['still_group']  = $this->db->query("SELECT * FROM sd_items_group WHERE id=".$row->item_group." LIMIT 1;");
+                $data['list_group']  = $this->db->get("sd_items_group");
+                    $data['still_type']  = $this->db->query("SELECT * FROM sd_items_type WHERE id=".$row->item_type." LIMIT 1;");
+                    $data['list_types']  = $this->db->get("sd_items_type");	
+		$this->load->view('user/edit_item_view', $data);
+		}
+		else{redirect('user/panel');}
+							
+							}
 	
 	public function category($id)
 	{
@@ -239,8 +265,9 @@ public function ready_delete_group($id)
 		$query = $this->db->query("SELECT * FROM sd_items_group WHERE ID=".$id." LIMIT 1;");	
 		$row = $query->row();
             
-		$data['what_delete'] = $row->group_title;
+		$data['what_delete'] = "группу элементов: ".$row->group_title;
         $data['delete_descript'] = $row->group_descript;
+        $data['delete_action'] = "user/delete/";
         $data['delete_id'] = "group/".$row->ID;
 		$this->load->view('user/ready_delete_view', $data);
 		}
@@ -264,7 +291,32 @@ public function ready_delete_post($id)
             
 		$data['what_delete'] = $row->post_name;
         $data['delete_descript'] = $row->post_anons;
+        $data['delete_action'] = "user/delete/";
         $data['delete_id'] = "post/".$row->id;
+		$this->load->view('user/ready_delete_view', $data);
+		}
+		else{redirect('user/panel');}
+
+	}
+    
+    //Удаление элемента действие 1
+public function ready_delete_item($id)
+	{
+
+	$this->load->model('Singin');
+	$session_id_check = $this->session->userdata('session_id');
+	$key_check= $this->session->userdata('key');
+	$check = $this->Singin->check_login_admin($session_id_check, $key_check);
+	
+		if ($check == true){
+		$this->load->database();
+		$query = $this->db->query("SELECT * FROM sd_items WHERE id=".$id." LIMIT 1;");	
+		$row = $query->row();
+            
+		$data['what_delete'] = "элемент ".$row->item_name;
+        $data['delete_descript'] = $row->item_text;
+        $data['delete_id'] = "item/".$row->ID;
+        $data['delete_action'] = "user/delete/";
 		$this->load->view('user/ready_delete_view', $data);
 		}
 		else{redirect('user/panel');}

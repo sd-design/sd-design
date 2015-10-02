@@ -75,7 +75,7 @@
 	
 	?>
 	<br/>
-		<div class="btn-group" role="group" aria-label="Small button group"><a href="<?php echo base_url();?>user/yandex/metrika" class="btn btn-warning" type="button">Яндек-метрика</a> <a href="<?php echo base_url();?>user/panel" class="btn btn-info" type="button">панель управления</a></div>
+		<div class="btn-group" role="group" aria-label="Small button group"><a href="<?php echo base_url();?>user/yandex/metrika" class="btn btn-warning" type="button">Яндекс-метрика</a> <a href="<?php echo base_url();?>user/panel" class="btn btn-info" type="button">панель управления</a></div>
 	</div>
 
 	</div>

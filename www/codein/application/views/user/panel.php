@@ -20,7 +20,7 @@
 <div class="well">
     <div class="logotype">
     <div class="well-logo"></div></div>
-    sd-engine CMS v1.0.6 <br/><small><?php echo $panel; ?></small><br/>
+    sd-engine CMS <b><?php echo $sys_version; ?></b><br/><small><?php echo $panel; ?></small><br/>
     <a href="<?php echo base_url();?>" target="_blank" class="btn btn-warning">перейти на сайт</a><div class="col-md-offset-11">
     <a href="<?php echo base_url();?>user/logout" class="btn btn-lg btn-danger">выйти</a></div>
 </div>
@@ -187,6 +187,7 @@
 		
 
 	</div>
+    <!-- <a href="<?php echo base_url();?>user/sys_update" class="btn btn-info"><span class="glyphicon glyphicon-refresh">  </span>  проверить обновления</a> -->
 				</div>
 
 </body>

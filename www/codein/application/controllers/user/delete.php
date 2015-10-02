@@ -41,6 +41,51 @@ public function post($id)
 							
 							}
     
+    
+//Удаление элемента
+public function item($id)
+		{
+								$this->load->model('Singin');
+	$session_id_check = $this->session->userdata('session_id');
+	$key_check= $this->session->userdata('key');
+	$check = $this->Singin->check_login_admin($session_id_check, $key_check);
+	
+	if ($check == true){
+		$this->load->database();
+		$query = $this->db->query("SELECT * FROM sd_items WHERE id=".$id." LIMIT 1;");	
+        $row = $query->row_array(); 
+        $data['delete_name'] = $row['item_name'];
+            
+        $this->db->query("DELETE FROM sd_items WHERE id=".$id." LIMIT 1;");		
+				
+		$this->load->view('user/delete_success_view', $data);
+		}
+		else{redirect('user/panel');}
+							
+							}
+
+//Удаление группы элементов
+public function group($id)
+		{
+								$this->load->model('Singin');
+	$session_id_check = $this->session->userdata('session_id');
+	$key_check= $this->session->userdata('key');
+	$check = $this->Singin->check_login_admin($session_id_check, $key_check);
+	
+	if ($check == true){
+		$this->load->database();
+		$query = $this->db->query("SELECT * FROM sd_items_group WHERE id=".$id." LIMIT 1;");	
+        $row = $query->row_array(); 
+        $data['delete_name'] = $row['group_title'];
+            
+        $this->db->query("DELETE FROM sd_items_group WHERE id=".$id." LIMIT 1;");		
+				
+		$this->load->view('user/delete_success_view', $data);
+		}
+		else{redirect('user/panel');}
+							
+							}
+    
 //не редактированная функция!!!	
 public function category($id)
 	{
