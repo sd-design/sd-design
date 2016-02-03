@@ -44,10 +44,10 @@ return $yandex_name;
     }  
     
 //запрос на альбомы пользователя    
-public function get_albums()
+public function get_albums($year)
  {
 
-	$query = $this->db->get("sd_yandex_foto ");
+	$query = $this->db->query("SELECT * FROM sd_yandex_foto WHERE yandex_year=".$year);
 return $query;
 
     }

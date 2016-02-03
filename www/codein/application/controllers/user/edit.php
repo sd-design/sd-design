@@ -113,7 +113,7 @@ EDIT PART
         $data['time'] = date_format(date_create($date), 'H:i:s');
                 $data['still_group']  = $this->db->query("SELECT * FROM sd_items_group WHERE id=".$row->item_group." LIMIT 1;");
                 $data['list_group']  = $this->db->get("sd_items_group");
-                    $data['still_type']  = $this->db->query("SELECT * FROM sd_items_type WHERE id=".$row->item_type." LIMIT 1;");
+                    $data['still_type']  = $this->db->query("SELECT * FROM sd_items_type WHERE item_type='".$row->item_type."' LIMIT 1;");
                     $data['list_types']  = $this->db->get("sd_items_type");	
 		$this->load->view('user/edit_item_view', $data);
 		}

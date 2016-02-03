@@ -10,7 +10,6 @@
 <link href='<?php echo base_url();?>css-back/style.css' rel='stylesheet' type='text/css'>
 <script src="<?php echo base_url();?>js/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
-<script src="<?php echo base_url();?>js/bootstrap.min.js"></script>
 </head>
 <body>
 
