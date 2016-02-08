@@ -1,10 +1,10 @@
 <?php
 
 $lang['db_invalid_connection_str'] = 'Unable to determine the database settings based on the connection string you submitted.';
-$lang['db_unable_to_connect'] = 'ÐÐµÐ²Ð¾Ð·Ð¼Ð¾Ð¶Ð½Ð¾ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡Ð¸Ñ‚ÑŒÑÑ Ðº Ð”Ð‘ Ñ Ñ‚ÐµÐºÑƒÑ‰Ð¸Ð¼Ð¸ Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ°Ð¼Ð¸.';
+$lang['db_unable_to_connect'] = 'Íåâîçìîæíî ïîäêëþ÷èòüñÿ ê ñåðâåðó ÁÄ ñ òåêóùèìè íàñòðîéêàìè.';
 $lang['db_unable_to_select'] = 'Unable to select the specified database: %s';
 $lang['db_unable_to_create'] = 'Unable to create the specified database: %s';
-$lang['db_invalid_query'] = 'ÐÐµÐ¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ñ‹Ð¹ Ð·Ð°Ð¿Ñ€Ð¾Ñ Ðº Ð‘Ð”.';
+$lang['db_invalid_query'] = 'Íå ñîâñåì êîððåêòíûé çàïðîñ ÁÄ.';
 $lang['db_must_set_table'] = 'You must set the database table to be used with your query.';
 $lang['db_must_use_set'] = 'You must use the "set" method to update an entry.';
 $lang['db_must_use_index'] = 'You must specify an index to match on for batch updates.';

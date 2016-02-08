@@ -36,9 +36,9 @@
 <div class="col-sm-3">
 <h4>Тип * <small>Важно привязать к типу, иначе он будет привязан к основному типу инфо-элементы</small></h4>
 <select class="form-control" name="item_type">
-<option value="1"> - - по умолчанию </option>
+<option value="block"> - - по умолчанию </option>
 <?php foreach ($items_type_arr->result()  as $item):?>
-<option value="<?php echo $item->id;?>"><?php echo $item->name_type;?></option>
+<option value="<?php echo $item->item_type;?>"><?php echo $item->name_type;?></option>
 <?php endforeach;?>
 </select>
 </div>

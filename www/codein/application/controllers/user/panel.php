@@ -5,7 +5,7 @@ class Panel extends CI_Controller {
 
 public function __construct(){
  parent::__construct();
- 			$this-> load->helper('form');
+ 			$this-> load-> helper('form');
 		 	$this->load->library('session');
 }
 	/**
@@ -27,10 +27,8 @@ $login = $this->session->userdata('login');
 $query = $this->db->query("SELECT * FROM users WHERE login='$login' LIMIT 1");
 $row = $query->row_array();	
 	if($row['user_role']== "administrator")		{		
-				$data['panel']= "transfer is OK";
-				$options  = $this->db->query("SELECT * FROM sd_options LIMIT 1;");
-                $option = $options->row();
-                $data['sys_version'] = $option->sys_version;
+						$data['panel']= "transfer is OK";
+						
 						$this->load->view('user/panel', $data);
 						}
 						if($row['user_role']== "user")		{		

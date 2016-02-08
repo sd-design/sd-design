@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>MC | Database Error</title>
+<title>Database Error</title>
 <style type="text/css">
 
 ::selection{ background-color: #E13300; color: white; }
@@ -14,7 +14,7 @@ body {
 	font: 13px/20px normal Helvetica, Arial, sans-serif;
 	color: #4F5155;
 }
-#wrapp{width: 700px;}
+
 a {
 	color: #003399;
 	background-color: transparent;
@@ -22,7 +22,7 @@ a {
 }
 
 h1 {
-	color: red;
+	color: #444;
 	background-color: transparent;
 	border-bottom: 1px solid #D0D0D0;
 	font-size: 19px;
@@ -46,37 +46,17 @@ code {
 	margin: 10px;
 	border: 1px solid #D0D0D0;
 	-webkit-box-shadow: 0 0 8px #D0D0D0;
-	background:#cddadd;
-	
 }
-.action{margin: 0; padding: 0;}
-.open{text-decoration: none; color:red;}
-.pano{display: none; }
 
-.pano h1{color: red;}
 p {
 	margin: 12px 15px 12px 15px;
 }
 </style>
-
 </head>
 <body>
-<div id="wrapp">	
-	<div class="action"><h1>ERROR</h1>
-<a href="#" class="open">see more &darr;</a>
-</div>
-<div id="container">
-	<div class="pano">
+	<div id="container">
 		<h1><?php echo $heading; ?></h1>
 		<?php echo $message; ?>
 	</div>
-</div>
-</div>
 </body>
-<script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
-<script type="text/javascript">
-	$('.open').click(function() {
-		$('.pano').toggle("fast");
-	});
-</script>
 </html>
