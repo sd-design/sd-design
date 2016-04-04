@@ -1,8 +1,7 @@
-<div class="container theme-showcase">
-	<h1>Раздел: <?php echo $category_name;?></h1>
 
-	<div id="body">
-		<p> Описание: <?php echo $category_descript;?></p>
+<div class="container theme-showcase">
+<div class="blog-post">
+		
 <?php foreach ($list_posts->result()  as $item):?>
 <div class="row">
 <div class="col-sm-7">

@@ -1,62 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>404 Page Not Found</title>
-<style type="text/css">
+<!DOCTYPE HTML>
 
-::selection{ background-color: #E13300; color: white; }
-::moz-selection{ background-color: #E13300; color: white; }
-::webkit-selection{ background-color: #E13300; color: white; }
+<html lang="ru">
+	<head>
+	
+		<title>Медиа-церковь | Россия</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Медиа-церковь - инструменты помогающие в медиаслужении" />
+		<meta name="keywords" content="Медиа-церковь, медиаслужение, уроки, туториалы" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="<?php echo base_url();?>js/jquery-2.1.1.min.js"></script>
+		<script src="<?php echo base_url();?>js/jquery.dropotron.min.js"></script>
+		<script src="<?php echo base_url();?>js/skel.min.js"></script>
+		<script src="<?php echo base_url();?>js/skel-layers.min.js"></script>
+		<script src="<?php echo base_url();?>js/init.js"></script>
+	
+			<link rel="stylesheet" href="<?php echo base_url();?>css/skel.css" />
+			<link rel="stylesheet" href="<?php echo base_url();?>css/style.css" />
+			<link rel="stylesheet" href="<?php echo base_url();?>css/style-desktop.css" />
 
-body {
-	background-color: #fff;
-	margin: 40px;
-	font: 13px/20px normal Helvetica, Arial, sans-serif;
-	color: #4F5155;
-}
+		<!--[if lte IE 8]><link rel="stylesheet" href="<?php echo base_url();?>css/ie/v8.css" /><![endif]-->
+	</head>
+	<body class="homepage">
+		<div id="main-wrapper">
+				<div id="main" class="container">
+					<div class="row">
+						<div class="12u">
+							<div class="content">
+							
+								<!-- Content -->
+						
+									<article class="box page-content">
+						<div class="btn btn-lg btn-danger"><h2>ERROR 404</h2></div>
+		
+	
+	<h3>404 - страница не найдена</h3>
+		<div class="alert alert-warning" role="alert"><p>Описание: <i>По этому запросу не найдено ничего</i></p><br/>
+		<p><a href="<?php echo base_url();?>" class="btn btn-lg btn-info">Начните с главной страницы сайта</a></p>
+		</div>
+	</article>
+							</div>
+						</div>
+				</div>
 
-a {
-	color: #003399;
-	background-color: transparent;
-	font-weight: normal;
-}
+		</div>
+</div>
+<!-- Footer -->
+			<footer id="footer" class="container">
+			<div id="logo-mc"></div>
+				<div class="row 200%">
+				
+					<div class="12u">
 
-h1 {
-	color: #444;
-	background-color: transparent;
-	border-bottom: 1px solid #D0D0D0;
-	font-size: 19px;
-	font-weight: normal;
-	margin: 0 0 14px 0;
-	padding: 14px 15px 10px 15px;
-}
+						<!-- About -->
+							<section>
+								<h2 class="major"><span>Есть предложение? Пишите!</span></h2>
+								<p>
+									Предложения, идеи, ссылки на интересные ресурсы. Если у вас есть опыт и вы желаете им поделиться - не стесняйтесь.								
+									<a href="new_idea/">Рады любым предложениям и идеям :)</a>
+								</p>
+							</section>
 
-code {
-	font-family: Consolas, Monaco, Courier New, Courier, monospace;
-	font-size: 12px;
-	background-color: #f9f9f9;
-	border: 1px solid #D0D0D0;
-	color: #002166;
-	display: block;
-	margin: 14px 0 14px 0;
-	padding: 12px 10px 12px 10px;
-}
+					</div>
+				</div>
+				<div class="row 200%">
+					<div class="12u">
 
-#container {
-	margin: 10px;
-	border: 1px solid #D0D0D0;
-	-webkit-box-shadow: 0 0 8px #D0D0D0;
-}
+						<!-- Contact -->
+							<section>
+								<h2 class="major"><span>На связи с нами</span></h2>
+								<ul class="contact">
+									<li><a class="icon fa-facebook" href="#"><span class="label">Facebook</span></a></li>
+									<li><a class="icon fa-vk" href="http://vk.com/mediachurch" target="_blank"><span class="label">VK</span></a></li> 
+									<li><a class="icon fa-twitter" href="http://twitter.com/mediacerkov" target="_blank"><span class="label">Twitter</span></a></li>
+									<li><a class="icon fa-google-plus" href="#"><span class="label">Google+</span></a></li>
+								</ul>
+							</section>
+					
+					</div>
+				</div>
 
-p {
-	margin: 12px 15px 12px 15px;
-}
-</style>
-</head>
-<body>
-	<div id="container">
-		<h1><?php echo $heading; ?></h1>
-		<?php echo $message; ?>
-	</div>
-</body>
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul class="menu">
+							<li>&copy; Медиа-церковь. Все права у Господа</li><li>Дизайн под вдохновением: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+
+			</footer>
+
+	</body>
 </html>

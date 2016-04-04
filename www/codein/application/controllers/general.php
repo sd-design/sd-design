@@ -14,8 +14,9 @@ public function __construct()
 $data['page_title'] = "Все разделы";
 $data['list_category']  = $this->db->query("SELECT * FROM sd_category");
 
-		$this->load->view('template/header_view',$data);
-		$this->load->view('template/list_category_view',$data);
+		$this->load->view('template/header_index_view',$data);
+		$this->load->view('template/menu/top_menu',$data);
+		$this->load->view('template/general_body_view',$data);
 		$this->load->view('template/footer_view',$data);
 
 	}

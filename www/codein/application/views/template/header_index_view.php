@@ -1,47 +1,22 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-	<title>Вертикаль-Альфа | Огнезащита, ремонт фасадов, высотные работы, промышленный альпинизм.</title>
+<!DOCTYPE HTML><html lang="ru"><head><title>Медиа-церковь | Россия</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><meta name="description" content="Медиа-церковь - инструменты помогающие в медиаслужении" />
+<meta name="keywords" content="Медиа-церковь, медиаслужение, уроки, туториалы" /><meta property="og:title" content="Media-church.ru — медиацерковь Россия, мультимедиа и дизайн" />
+<meta property="og:type" content="website" /><meta property="og:url" content="http://media-church.ru/" />
+<meta property="og:image" content="http://media-church.ru/images/logo_150.png" />
+<meta property="og:site_name" content="Media-church.ru" />
+<link rel='shortcut icon' href='http://media-church.ru/images/favicon.ico' />
+<link rel="stylesheet" href="<?php echo base_url();?>css/bootstrap.css" media="screen">
+<link rel="stylesheet" href="<?php echo base_url();?>css/font-awesome.min.css">
+<link rel="stylesheet" href="<?php echo base_url();?>css/custom.min.css">
 
-	<meta charset="utf-8">
+		<!--[if lte IE 8]><script src="<script src="<?php echo base_url();?>css/js/html5shiv.js"></script><![endif]-->
+		 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="<?php echo base_url();?>css/js/html5shiv.js"></script>
+      <script src="<?php echo base_url();?>css/js/respond.min.js"></script>
+    <![endif]-->
+<script src="<?php echo base_url();?>js/jquery-2.1.1.min.js"></script>
+<script src="<?php echo base_url();?>js/slider.js"></script>
 
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta http-equiv="Keywords" content="Вертикаль-Альфа промышленный альпинизм, высотные работы, фасад, покраска, трубы, герметизация, мойка окон,монтаж, демонтаж, морские узлы, Москва, Россия, организация работ, спасработы,ремонт фасадов, геметизация межпанельных швов и стыков,покраска высотных металоконструкций и труб,	навеска водосточных труб,мойка окон,укладка фасадной плитки,монтажные и демонтажные работы, усиление несущих конструкций">
-<meta http-equiv="description" content="Вертикаль-Альфа - все виды высотных работ и промышленного альпинизма: кровельные работы, ремонт кровли, монтаж и ремонт фасадных систем, ремонт  и усиление несущих конструкций, герметизация межпанельных швов, огнезащита, антикоррозионная защита и многое другое.">
-<link rel="icon" href="<?php echo base_url();?>images/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="<?php echo base_url();?>images/favicon.ico" type="image/x-icon"> 
+	</head>
+	<body class="homepage">
 
-	<link href='<?php echo base_url();?>css/fonts.css' rel='stylesheet' type='text/css'>
-	<link href="<?php echo base_url();?>css/font-awesome.min.css" rel="stylesheet">
-	
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/bootstrap.min.css" media="screen">	
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/jquery.bxslider.css" media="screen">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/font-awesome.css" media="screen">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/animate.css" media="screen">
-    <!-- REVOLUTION BANNER CSS SETTINGS -->
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/settings.css" media="screen"/>
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/style.css" media="screen">
-
-	
-	<script type="text/javascript" src="<?php echo base_url();?>js/jquery.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>js/jquery.migrate.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>js/jquery.bxslider.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>js/jquery.imagesloaded.min.js"></script>
-  	<script type="text/javascript" src="<?php echo base_url();?>js/jquery.isotope.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>js/retina-1.1.0.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>js/plugins-scroll.js"></script>
-    <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
-    <script type="text/javascript" src="<?php echo base_url();?>js/jquery.themepunch.tools.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url();?>js/jquery.themepunch.revolution.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url();?>js/script.js"></script>
-
-</head>
-<body class="patt6">
-
-	<!-- Container -->
-	<div id="container">
-		<!-- Header
-		    ================================================== -->

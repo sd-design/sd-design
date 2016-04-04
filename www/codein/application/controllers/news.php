@@ -4,47 +4,63 @@ class News extends CI_Controller {
 
 public function __construct()
 	{
+	
 	parent::__construct();
-	$this->load->database();
-
+		$this->load->database();
 	}
-
+	/**
+	 * Index Page for this controller.
+	 *
+	 * Maps to the following URL
+	 * 		http://example.com/index.php/welcome
+	 *	- or -  
+	 * 		http://example.com/index.php/welcome/index
+	 *	- or -
+	 * Since this controller is set as the default controller in 
+	 * config/routes.php, it's displayed at http://example.com/
+	 *
+	 * So any other public methods not prefixed with an underscore will
+	 * map to /index.php/welcome/<method_name>
+	 * @see http://codeigniter.com/user_guide/general/urls.html
+	 */
 	public function index()
 	{
-        $this->load->model('Menu');
-        $data['title_menu'] = $this->Menu->group_title_item(2);
-        $data['items_menu'] = $this->Menu->menu_item(2);
-        $data['title_widget'] = $this->Menu->group_title_item(5);
-        $data['items_widget'] = $this->Menu->menu_item(5);
-        $data['list_news']  = $this->db->query("SELECT * FROM sd_post");
-        
-$data['page_title'] = "Новости компании";
+$data['page_title'] = "Все разделы новостей";
+$current_key = "news";
+$data['list_category']  = $this->db->query("SELECT * FROM sd_category WHERE sd_category.key = '$current_key'");
 
-		$this->load->view('template/header_view');
-		$this->load->view('template/menu_view');
-        $this->load->view('template/news_body_view',$data);
-		$this->load->view('template/footer_view');
+		$this->load->view('template/header_view',$data);
+		$this->load->view('template/menu/top_menu_inside',$data);
+		$this->load->view('template/list_news_view',$data);
+		$this->load->view('template/footer_view',$data);
 
 	}
-    
-/// вывод отдельной новости
-public function read($id)
+	
+		public function news_category($id)
 	{
 	if(!isset($id)){show_404();}
-    $this->load->model('Menu');
-    $data['title_menu'] = $this->Menu->group_title_item(2);
-    $data['items_menu'] = $this->Menu->menu_item(2);
-    $data['page_marker'] = "news";
+
+$sql = "SELECT id, category_name, category_descript FROM sd_category WHERE category_url = ?";
+$query = $this->db->query($sql, array($id));
+$error = $this->db->_error_message();
+$error_id = $query->num_rows();
+if ($error_id == 0){show_404();}
+foreach ($query->result_array() as $row)
+{
+    $data['page_title'] = $row['category_name'];
+    $data['category_name'] = $row['category_name'];
+    $data['category_descript'] = $row['category_descript'];
+    $category_id =  $row['id'];
     
-$this->load->model('Page');
-$data['page_item'] = $this->Page->open_url($id);
 
-		$this->load->view('template/header_view');
-        $this->load->view('template/menu_view');
-		$this->load->view('template/single_body_view',$data);
-		$this->load->view('template/footer_view');
-	}    
+}
+$data['list_posts']  = $this->db->query("SELECT * FROM sd_post WHERE category_id=".$category_id.";");	
 
+		$this->load->view('template/header_view',$data);
+		$this->load->view('template/menu/category_menu_inside',$data);
+		$this->load->view('template/category_view',$data);
+		$this->load->view('template/footer_view',$data);
+	}
 	
 }
 

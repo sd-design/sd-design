@@ -5,9 +5,10 @@ class Login extends CI_Controller {
 
 public function __construct(){
  parent::__construct();
- 			$this-> load-> helper('form');
+ 			$this->load-> helper('form');
 		 	$this->load->library('session');
 		 	$this->load->library('form_validation');
+ 
 }
 	/**
 
@@ -23,6 +24,7 @@ public function __construct(){
 	}
 	public function sign_up()
 		{
+        $this->load->model('Log');
 		$data['alert']= "";
 		 	$this->form_validation->set_rules('login', 'Логин', 'required');
 			$this->form_validation->set_rules('password', 'Пароль', 'required');
@@ -37,11 +39,13 @@ public function __construct(){
 		$this->load->view('user/login', $data);
 		
 		}
-		elseif ($this->form_validation->run() == TRUE){
+		if ($this->form_validation->run() == TRUE){
 	
-				$this->load->database();
-				$check=FALSE;
-				$login_check= $_POST['login'];
+            $login_check= $_POST['login'];
+				
+            $check_up = $this->Log->check_user($login_check);
+            if($check_up == null){$check=FALSE;}
+				
 				$pwd_check =base64_encode(md5($_POST['password']));
 				
 				
@@ -51,7 +55,7 @@ public function __construct(){
 				
 				if($key_form!=$key_read){
 				$data['alert']= "HAKER go away";
-				$this->load->view('user/login', $data); }
+				redirect('user/login'); }
 				
 				
 				$query_check_user = $this->db->query("SELECT * FROM users WHERE login = ".$this->db->escape($login_check)." and pwd = ".$this->db->escape($pwd_check)."");

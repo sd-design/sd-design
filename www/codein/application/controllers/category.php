@@ -29,6 +29,7 @@ $data['page_title'] = "Все разделы";
 $data['list_category']  = $this->db->query("SELECT * FROM sd_category");
 
 		$this->load->view('template/header_view',$data);
+		$this->load->view('template/menu/top_menu_inside',$data);
 		$this->load->view('template/list_category_view',$data);
 		$this->load->view('template/footer_view',$data);
 
@@ -55,6 +56,7 @@ foreach ($query->result_array() as $row)
 $data['list_posts']  = $this->db->query("SELECT * FROM sd_post WHERE category_id=".$category_id.";");	
 
 		$this->load->view('template/header_view',$data);
+		$this->load->view('template/menu/category_menu_inside',$data);
 		$this->load->view('template/category_view',$data);
 		$this->load->view('template/footer_view',$data);
 	}

@@ -31,22 +31,23 @@ public function __construct()
 	{
 	if(!isset($id)){show_404();}
 	$this->load->database();
-$sql = "SELECT * FROM sd_post WHERE post_url = ?";
+$sql = "SELECT * FROM sd_post  WHERE post_url = ?";
 $query = $this->db->query($sql, array($id));
 $error = $this->db->_error_message();
 $error_id = $query->num_rows();
 if ($error_id == 0){show_404();}
-foreach ($query->result_array() as $row)
+foreach ($query->result() as $row)
 {
-	$data['page_title'] = $row['post_name'];
-    $data['post_name'] = $row['post_name'];
-    $data['post_text'] = $row['post_text'];
-    $data['post_time'] = $row['post_time'];
-    $data['post_autor'] = $row['post_autor'];
+	$data['page_title'] = $row->post_name;
+    $data['post_name'] = $row->post_name;
+    $data['post_text'] = $row->post_text;
+    $data['post_time'] = $row->post_time;
+    $data['post_autor'] = $row->post_autor;
 
 }
 
 		$this->load->view('template/header_view',$data);
+		$this->load->view('template/menu/post_menu_inside',$data);
 		$this->load->view('template/post_view',$data);
 		$this->load->view('template/footer_view',$data);
 	}

@@ -5,6 +5,7 @@ class Error404 extends CI_Controller {
 public function __construct()
 	{
 	parent::__construct();
+	
 
 	}
 	/**
@@ -29,8 +30,9 @@ public function __construct()
 	$data['head_page'] = "УПС-ССС! ОШИБОЧКА!";
 	$data['message'] = "Обычно это означает, что такой страницы нет или ее куда-то задевали...";
 	$this->load->view('template/header_view',$data);
+	$this->load->view('template/menu/top_menu_inside',$data);
 	$this->load->view('template/404_view',$data);
-	
+	$this->load->view('template/footer_view');
 	}
 	
 

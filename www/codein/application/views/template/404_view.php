@@ -1,24 +1,23 @@
-
-<body>
-<div class="container theme-showcase">
-		<div class="jumbotron">
-		<div id="body">
-	<br/>
+	
+				<div id="main" class="container">
+					<div class="row">
+						<div class="12u">
+							<div class="content">
+							
+								<!-- Content -->
+						
+									<article class="jumbotron">
 						<div class="btn btn-lg btn-danger"><h1>ERROR 404</h1></div>
 		
 	
-	<h3><?php echo $head_page; ?></h3>
-		<div class="alert alert-warning" role="alert"><p>Описание: <i><?php echo $message;?></i></p><br/>
+	<h2>404 - страница не найдена</h2>
+		<p>Описание: <i>По этому запросу не найдено ничего</i></p><br/>
 		<p><a href="<?php echo base_url();?>" class="btn btn-lg btn-info">Начните с главной страницы сайта</a></p>
+	<p class="pull-right"><small>Страница собрана за <strong>{elapsed_time}</strong> секунд</small></p>
+	</article>
+							</div>
+						</div>
+				</div>
+
 		</div>
 
-	<p class="footer"><small>Страница собрана за <strong>{elapsed_time}</strong> секунд</small></p>
-	
-		</div>
-
-		</div>
-</div>
-
-
-
-</body>
